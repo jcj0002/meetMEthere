@@ -1,6 +1,30 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
+
+
+
+const TravellersSchema = new Schema({
+    name: {
+        type: String
+    },
+    username: {
+        type: String
+    },
+
+    email: {
+        type: String
+    },
+    image: {
+
+        type: String
+
+    }
+
+
+})
+
 const TripSchema = new Schema({
     name: {
         type: String,
@@ -25,7 +49,7 @@ const TripSchema = new Schema({
         type: String
     },
 
-    travelers:[TravellerSchema],
+    travelers: [TravellersSchema],
     plans: [PlansSchema]
 
 
@@ -37,8 +61,10 @@ const TripSchema = new Schema({
 
 
 const TripModel = mongoose.model('Trip', TripSchema)
-const TravellerModel = mongoose.model('Traveller', TravellerSchema)
+const TravellersModel = mongoose.model('Travellers', TravellersSchema)
+const PlansModel = mongoose.model('Plans', PlansSchema )
 modeule.exports = {
     TripModel,
-    TravellerModel
+    TravellersModel,
+    PlansModel
 }
