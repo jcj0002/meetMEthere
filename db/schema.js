@@ -2,7 +2,28 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 
+const PlansSchema = new Schema({
+    activity: {
+        type: String,
+    },
+    price: {
+        type: Number,
+    },
+    date: {
+        type: Date,
+    },
+    description: {
+        type: String,
+    },
+    duration: {
+        type: String,
 
+    },
+    image: {
+        type: String
+    }
+
+})
 
 
 const TravellersSchema = new Schema({
@@ -62,7 +83,8 @@ const TripSchema = new Schema({
 
 const TripModel = mongoose.model('Trip', TripSchema)
 const TravellersModel = mongoose.model('Travellers', TravellersSchema)
-const PlansModel = mongoose.model('Plans', PlansSchema )
+const PlansModel = mongoose.model('Plans', PlansSchema)
+
 modeule.exports = {
     TripModel,
     TravellersModel,
