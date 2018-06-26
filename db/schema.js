@@ -56,13 +56,13 @@ const TripSchema = new Schema({
         type: String,
         default: "New Location"
     },
-    startDate: {
+   departureDate: {
         type: Date,
-        default: "New Date"
+    
     },
-    endDate:{
+    returnDate:{
         type: Date,
-        default:"New Date"
+    
     },
     description: {
         type: String
@@ -74,7 +74,7 @@ const TripSchema = new Schema({
         type: String
     },
 
-    travelers: [TravellersSchema],
+   attendees: [TravellersSchema],
     plans: [PlansSchema]
 
 
@@ -89,7 +89,7 @@ const TripModel = mongoose.model('Trip', TripSchema)
 const TravellersModel = mongoose.model('Travellers', TravellersSchema)
 const PlansModel = mongoose.model('Plans', PlansSchema)
 
-modeule.exports = {
+module.exports = {
     TripModel,
     TravellersModel,
     PlansModel
