@@ -17,6 +17,7 @@ connection.on('error', (err) => {
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+let tripsRouter = require('./routes/trips')
 
 let app = express();
 
