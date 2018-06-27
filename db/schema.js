@@ -26,7 +26,7 @@ const PlansSchema = new Schema({
 })
 
 
-const TravellersSchema = new Schema({
+const travelersSchema = new Schema({
     name: {
         type: String
     },
@@ -74,7 +74,7 @@ const TripSchema = new Schema({
         type: String
     },
 
-   attendees: [TravellersSchema],
+   attendees: [travelersSchema],
     plans: [PlansSchema]
 
 
@@ -86,11 +86,11 @@ const TripSchema = new Schema({
 
 
 const TripModel = mongoose.model('Trip', TripSchema)
-const TravellersModel = mongoose.model('Travellers', TravellersSchema)
+const travelersModel = mongoose.model('travelers', travelersSchema)
 const PlansModel = mongoose.model('Plans', PlansSchema)
 
 module.exports = {
     TripModel,
-    TravellersModel,
+    travelersModel,
     PlansModel
 }

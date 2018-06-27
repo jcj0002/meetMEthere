@@ -2,7 +2,7 @@ require('dotenv').config()
 const mongoose = require ('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
 
-const{ TripModel, PlansModel, TravellersModel } = require('./schema')
+const{ TripModel, PlansModel, travelersModel } = require('./schema')
 const now = Date.now()
 
 const vacay = new PlansModel ({
@@ -17,7 +17,7 @@ const vacay = new PlansModel ({
 
 
 
-const invitee = new TravellersModel ({
+const invitee = new travelersModel ({
     name:'Jane Smith',
     userName: 'janesmith',
     email: 'fake001@att.net',

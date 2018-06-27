@@ -15,7 +15,7 @@ connection.on('error', (err) => {
   console.log('Mongoose default connection error: ' + err);
 });
 
-let indexRouter = require('./routes/index');
+let travelersRouter = require('./routes/travelers');
 let usersRouter = require('./routes/users');
 let tripsRouter = require('./routes/trips')
 
@@ -31,9 +31,10 @@ app.get('/', (req,res) => {
   })
 
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/trips/', tripsRouter)
+app.use('/api/trips/:tripId/travelers', travelersRouter)
 
 
 module.exports = app;
