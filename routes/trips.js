@@ -10,6 +10,9 @@ router.get('/', function (req, res) {
         })
     })
 })
+
+
+
 //Create new trip
 router.post('/', (req, res) => {
     const newTrip = new TripModel(req.body)
@@ -31,7 +34,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     TripModel.findByIdAndRemove(req.params.id, req.body).then((trip) => {
         console.log('Deleted')
-        res.send('Deleted')
+        res.send(trip)
 
     })
 })

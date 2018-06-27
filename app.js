@@ -16,7 +16,6 @@ connection.on('error', (err) => {
 });
 
 let travelersRouter = require('./routes/travelers');
-let usersRouter = require('./routes/users');
 let tripsRouter = require('./routes/trips')
 
 let app = express();
@@ -30,9 +29,6 @@ app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
   })
 
-
-// app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/api/trips/', tripsRouter)
 app.use('/api/trips/:tripId/travelers', travelersRouter)
 
