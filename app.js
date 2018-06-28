@@ -26,13 +26,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+
+app.use('/api/trips', tripsRouter)
+app.use('/api/trips/:tripId/travelers', travelersRouter)
+app.use('/api/trips/:tripId/plans', plansRouter)
+
 app.use(express.static(__dirname + '/client/build/'));
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
   })
 
-app.use('/api/trips/', tripsRouter)
-app.use('/api/trips/:tripId/travelers', travelersRouter)
-app.use('/api/trips/:tripId/plans', plansRouter)
+
 
 module.exports = app;

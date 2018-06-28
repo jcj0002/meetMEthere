@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class TravelersPage extends Component {
+class TripShowPage extends Component {
     render() {
         return (
             <div>
-                hello
+               TripShowPage 
             </div>
         );
     }
 }
 
-export default TravelersPage;
+export default TripShowPage;

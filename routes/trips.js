@@ -13,13 +13,14 @@ router.get('/', function (req, res) {
 
 router.get('/:id', (req, res) => {
     TripModel.findById(req.params.id)
-       .then ((trip)=>{ res.send({
-           trip
-   
-       }) 
-       })
-     })
-     
+        .then((trip) => {
+            res.send({
+                trip
+
+            })
+        })
+})
+
 
 
 

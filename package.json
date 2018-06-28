@@ -2,7 +2,6 @@
   "name": "meetmethere",
   "version": "0.0.0",
   "private": true,
-  "proxy": "http://localhost:3001",
   "engines": {
     "node": "8.6.0"
   },
