@@ -47,25 +47,25 @@ const traveler1 = new TravelersModel({
 
 
 const familyTrip = new TripModel({
-    name: 'Smith Family Vaction',
+    name: 'Smith Family Vacation',
     location: 'Hawaii',
     departureDate: now,
     returnDate: now,
     description: 'BEST TRIP EVER!',
     hotel: 'Sandals Resort',
-    Image: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1489702025/waikiki-beach-honolulu-oahu-hawaii-HAISLE0316_0.jpg?itok=d4VqoOBE',
+    image: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1489702025/waikiki-beach-honolulu-oahu-hawaii-HAISLE0316_0.jpg?itok=d4VqoOBE',
     travelers: [travelers],
     plans: [vacay]
 })
 
 const friendTrip = new TripModel({
-    name: 'Best Friends Vaction',
+    name: 'Best Friends Vacation',
     location: 'Las Vegas',
     departureDate: now,
     returnDate: now,
     description: 'BEST TRIP EVER!',
     hotel: 'Mariott',
-    Image: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1489702025/waikiki-beach-honolulu-oahu-hawaii-HAISLE0316_0.jpg?itok=d4VqoOBE',
+    image: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1489702025/waikiki-beach-honolulu-oahu-hawaii-HAISLE0316_0.jpg?itok=d4VqoOBE',
     travelers: [traveler1],
     plans: [vacay1]
 })

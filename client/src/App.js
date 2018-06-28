@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
-import axios from 'axios'
+
 import TripPage from './components/TripPage'
 import LandingPage from './components/LandingPage'
 import PlansPage from './components/PlansPage'
@@ -9,21 +9,11 @@ import TravelersPage from './components/TravelersPage'
 import TripShowPage from './components/TripShowPage'
 
 class App extends Component {
-  state = {
-    trips: []
-  }
 
-  componentDidMount() {
-    axios.get('/api/trips').then((res) => {
-      console.log(res)
-      this.setState({ trips: res.data.trips })
-    }).catch((err) => {
-      console.error(err)
-    })
-  }
 
   render() {
     return (
+      
       <Router>
         <div>
           <div>

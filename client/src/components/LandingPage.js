@@ -14,6 +14,7 @@ class LandingPage extends Component {
     this.setState(newState)
     console.log(event) 
 }
+
 render() {
     return (
         <div>
@@ -35,7 +36,7 @@ render() {
         
                 />
                 
-                <button type="submit">LOGIN</button>
+                <button> <a href ="http://localhost:3000/trips">Login</a></button>
                 
             </form>
             
