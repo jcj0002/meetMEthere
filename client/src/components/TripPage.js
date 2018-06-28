@@ -61,7 +61,7 @@ class TripPage extends Component {
 
                 })}
 
-                <button>START PLANNING</button>
+                {/* <Link to=".."><button>START PLANNING</button></Link>   */}
             </div>
         );
     }
