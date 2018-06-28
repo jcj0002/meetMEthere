@@ -4,7 +4,7 @@ class TravelersPage extends Component {
     render() {
         return (
             <div>
-                hello
+                <h1>hello Travelers</h1>
             </div>
         );
     }

@@ -4,7 +4,7 @@ class TripShowPage extends Component {
     render() {
         return (
             <div>
-               TripShowPage 
+               <h2>TripShowPage</h2>
             </div>
         );
     }

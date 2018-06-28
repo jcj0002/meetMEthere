@@ -40,6 +40,7 @@ class App extends Component {
             <Route exact path="/trips/:tripId" component={TripShowPage} />
             <Route exact path="/trips" component={TripPage} />
 
+
           </Switch>
         </div>
       </Router>

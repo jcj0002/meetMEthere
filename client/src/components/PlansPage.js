@@ -4,7 +4,7 @@ class PlansPage extends Component {
     render() {
         return (
             <div>
-                plans
+                <h1>Hello Plans</h1>
             </div>
         );
     }
