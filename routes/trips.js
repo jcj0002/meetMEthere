@@ -11,6 +11,15 @@ router.get('/', function (req, res) {
     })
 })
 
+router.get('/:id', (req, res) => {
+ TripModel.findById(req.params.id)
+    .then ((trip)=>{ res.send({
+        trip
+
+    }) 
+    })
+  })
+  
 
 
 //Create new trip
