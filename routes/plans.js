@@ -44,6 +44,19 @@ router.post('/', function (req, res) {
 
 })
 
+//Delete Plans
+router.delete('/:id', function (req, res) {
+    TripModel.findById(req.params.tripId)
+        .then((trip) => {
+            trip.plans.id(req.params.id).remove()
+            return trip.save()
+        })
+        .then((savedPlans) => {
+            res.send({ trip: savedPlans })
+        })
+
+})
+
 
 
 module.exports = router
