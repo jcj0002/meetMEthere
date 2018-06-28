@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import style from 'styled-components'
+
+const TripImage = style.div`
+.TripImage{
+    width: 50vw;
+
+}
+`
 
 class TripPage extends Component {
     state = {
@@ -20,12 +28,12 @@ class TripPage extends Component {
             <div>
                 {this.state.trips.map((trips)=>{
                     return(
-                        <div key ={trips._id}>
-                        <img src={trips.image} alt={trips.name}/>
+                        <TripImage key ={trips._id}>
+                        <img className='TripImage' src={trips.image} alt={trips.name}/>
                         <p>{trips.name}</p>
                         <div>{trips.location}</div>
 
-                         </div>
+                         </TripImage>
 
                     )
                 })}
