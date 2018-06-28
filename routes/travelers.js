@@ -17,7 +17,16 @@ router.get('/', function (req, res) {
             console.error(error.message)
         })
 })
-
+//Show a single traveler
+router.get('/:id', (req, res) => {
+    TripModel.findById(req.params.tripId)
+        .then((trip) => {
+            const individualTraveler = trip.travelers.id(req.params.id)
+            res.send({
+                individualTraveler
+            })
+        })
+})
 // Add Travelers
 
 router.post('/', function (req, res) {
@@ -33,23 +42,23 @@ router.post('/', function (req, res) {
         .then((trip) => {
             res.send({
                 trip
-               
+
             })
         })
 
 })
 
 //Delete travelers
-router.delete ('/:id', function (req, res){
+router.delete('/:id', function (req, res) {
     TripModel.findById(req.params.tripId)
-    .then((trip)=>{
-        trip.travelers.id(req.params.id).remove()
-        return trip.save()
-        }) 
-        .then((savedTrip) =>{
-          res.send({trip: savedTrip})
+        .then((trip) => {
+            trip.travelers.id(req.params.id).remove()
+            return trip.save()
         })
-    
+        .then((savedTrip) => {
+            res.send({ trip: savedTrip })
+        })
+
 })
 
 
