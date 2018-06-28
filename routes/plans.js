@@ -23,7 +23,26 @@ router.get('/:id', (req, res) => {
         })
     })
 })
+// Add Plans
 
+router.post('/', function (req, res) {
+
+    
+    TripModel.findById(req.params.tripId)
+        .then((trip) => {
+            const newPlan = new PlansModel(req.body)
+            trip.plans.push(newPlan)
+            console.log("new Plan", req.body)
+            return trip.save()
+        })
+        .then((trip) => {
+            res.send({
+                trip
+
+            })
+        })
+
+})
 
 
 
