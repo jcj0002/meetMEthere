@@ -40,6 +40,22 @@ class NewTripPage extends Component {
                 value={this.state.name}
                 onChange={this.handleChange}
                 />
+                <br/>
+                <input
+                placeholder = "Location"
+                type="text"
+                name="location"
+                value={this.state.location}
+                onChange={this.handleChange}/>
+ <br/>
+                <input
+                placeholder = "Departure Date"
+                type="date"
+                name="departureDate"
+                value={this.state.departureDate}
+                onChange={this.handleChange}/>
+
+                
 
                 
                 
