@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import UpdateTripPage from './UpdateTripPage'
 
 
 
 class TripShowPage extends Component {
     state = {
-        trips: []
+        trips: [],
+        editTrip: false
     }
     componentDidMount() {
         const tripId = this.props.match.params.tripId
@@ -21,13 +23,16 @@ class TripShowPage extends Component {
     }
     deleteTrip = () => {
         const tripId = this.state.trips._id
-    
-        axios.delete(`/api/trips/${tripId}`)
-          .then(res => {
-            this.props.history.push('/trips')
-          })
-      }
 
+        axios.delete(`/api/trips/${tripId}`)
+            .then(res => {
+                this.props.history.push('/trips')
+            })
+    }
+    toggleEditTripForm = () => {
+        const updatedEditTrip = !this.state.editTrip
+        this.setState({ editTrip: updatedEditTrip })
+    }
 
 
 
@@ -35,12 +40,31 @@ class TripShowPage extends Component {
 
         return (
             <div>
-                <h2>Your Trip</h2>
+                <h2>{this.state.trips.name}</h2>
                 <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
+                <div>{this.state.trips.description}</div>
 
-                <br/>
-                <button onClick={this.deleteTrip}>Delete User</button>
+                <br />
+                <button onClick={this.deleteTrip}>Delete Trip</button>
 
+
+                {this.state.editTrip
+                    ? null
+                    : (
+                        <button onClick={this.toggleEditTripForm}>
+                            Edit Trip
+                    </button>
+                    )
+                }
+
+
+
+                {this.state.editTrip
+                    ? <div>
+                        <UpdateTripPage />
+                        />
+                    </div>
+                    : null}
             </div>
         );
     }

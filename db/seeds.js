@@ -65,7 +65,7 @@ const friendTrip = new TripModel({
     returnDate: now,
     description: 'BEST TRIP EVER!',
     hotel: 'Mariott',
-    image: 'https://1.bp.blogspot.com/-88Y4fN9c8iI/VzC6_8igmiI/AAAAAAAABiE/asOwnqQgpYY_1MRqKSVZQYPRrJIp_eaBwCLcB/s1600/Las-Vegas-Strip-Where-to-Stay.jpg',
+    image: 'https://fthmb.tqn.com/t0gttJyTY9BjnYvmbrSBmunUu9w=/3865x2576/filters:fill(auto,1)/las-vegas-sign-at-night-596570141-592d94915f9b585950c6effa.jpg',
     travelers: [traveler1],
     plans: [vacay1]
 })

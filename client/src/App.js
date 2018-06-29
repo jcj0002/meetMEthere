@@ -8,6 +8,7 @@ import PlansPage from './components/PlansPage'
 import TravelersPage from './components/TravelersPage'
 import TripShowPage from './components/TripShowPage'
 import NewTripPage from './components/NewTripPage'
+import UpdateTripPage from './components/UpdateTripPage'
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/trips" component={TripPage} />
             <Route exact path="/trips/new" component={NewTripPage} />
+            <Route exact path="/trips/:tripId/edit" component={UpdateTripPage} />
             <Route exact path="/trips/:tripId" component={TripShowPage} />
             <Route exact path="/trips/:tripId/plans" component={PlansPage} />
             <Route exact path="/trips/:tripId/travelers" component={TravelersPage} />
