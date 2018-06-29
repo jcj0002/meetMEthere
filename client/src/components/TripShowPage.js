@@ -45,14 +45,14 @@ class TripShowPage extends Component {
                 <div>{this.state.trips.description}</div>
 
                 <br />
-                <button onClick={this.deleteTrip}>Delete Trip</button>
+                <button onClick={this.deleteTrip}>DELETE TRIP</button>
 
 
                 {this.state.editTrip
                     ? null
                     : (
                         <button onClick={this.toggleEditTripForm}>
-                            Edit Trip
+                            EDIT TRIP
                     </button>
                     )
                 }
@@ -61,8 +61,8 @@ class TripShowPage extends Component {
 
                 {this.state.editTrip
                     ? <div>
-                        <UpdateTripPage />
-                        />
+                        <UpdateTripPage match={this.props.match} history={this.props.history}/>
+                       
                     </div>
                     : null}
             </div>

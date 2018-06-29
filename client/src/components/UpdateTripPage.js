@@ -23,10 +23,14 @@ class UpdateTripPage extends Component {
     handleSubmit = (event) => {
         const tripId = this.props.match.params.tripId
         event.preventDefault()
-        axios.put('/api/trips/${tripId}/edit', this.state).then((res) => {
-            console.log(res.data)
-            this.props.history.push(`/trips/${tripId}`)
-        })
+        
+        console.log('props inside handleSubmit', this.props)
+        
+        axios.put(`/api/trips/${tripId}`, this.state)
+            .then((res) => {
+                 this.props.history.push(`/trips/${tripId}`)
+                console.log(res.data)
+            })
     }
     render() {
         return (
@@ -90,7 +94,7 @@ class UpdateTripPage extends Component {
                         onChange={this.handleChange} />
 
                     <br />
-                    <button type="submit">Submit</button>
+                    <button type="submit">UPDATE</button>
                     </form> 
             </div>
                 );

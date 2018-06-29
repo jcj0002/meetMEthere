@@ -28,8 +28,9 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/trips" component={TripPage} />
             <Route exact path="/trips/new" component={NewTripPage} />
-            <Route exact path="/trips/:tripId/edit" component={UpdateTripPage} />
+            
             <Route exact path="/trips/:tripId" component={TripShowPage} />
+            <Route exact path="/trips/:tripId/" component={UpdateTripPage} />
             <Route exact path="/trips/:tripId/plans" component={PlansPage} />
             <Route exact path="/trips/:tripId/travelers" component={TravelersPage} />
 
