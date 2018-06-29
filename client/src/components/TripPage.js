@@ -36,32 +36,25 @@ class TripPage extends Component {
     render() {
         return (
             <div>
-                
                 <h1>Trip</h1>
+                <form>
+                    Name: <input type='text' />
+                </form>
                 {this.state.trips.map((trips) => {
                     return (
-
                         <TripImage key={trips._id}>
                             <p>{trips.name}</p>
                             <div>{trips.location}</div>
                             <div className='Container'>
                                 <img className='TripImage' src={trips.image} alt={trips.name} />
                                 <div>{trips.description}</div>
-
                             </div>
-                            <Link to="/trips/:tripId"><button>VIEW</button></Link>  
-
-
-
-
-
+                            <Link to={`/trips/${trips._id}`}><button>VIEW</button></Link>  
                         </TripImage>
-
                     )
-
                 })}
 
-                {/* <Link to=".."><button>START PLANNING</button></Link>   */}
+                <Link to=""><button>START PLANNING</button></Link>  
             </div>
         );
     }

@@ -56,13 +56,13 @@ const TripSchema = new Schema({
         type: String,
         default: "New Location"
     },
-   departureDate: {
+    departureDate: {
         type: Date,
-    
+
     },
-    returnDate:{
+    returnDate: {
         type: Date,
-    
+
     },
     description: {
         type: String
@@ -74,7 +74,7 @@ const TripSchema = new Schema({
         type: String
     },
 
-   travelers: [TravelersSchema],
+    travelers: [TravelersSchema],
     plans: [PlansSchema]
 
 

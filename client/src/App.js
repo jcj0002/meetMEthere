@@ -13,24 +13,24 @@ class App extends Component {
 
   render() {
     return (
-      
+
       <Router>
         <div>
           <div>
-            <Link to="/"></Link>
+            <Link to="/trips">Home</Link>
           </div>
           <div className="App">
 
 
           </div>
           <Switch>
+            <Route exact path="/trips" component={TripPage} />
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/trips/:tripId/plans" component={PlansPage} />
             <Route exact path="/trips/:tripId/travelers" component={TravelersPage} />
             <Route exact path="/trips/:tripId" component={TripShowPage} />
-            <Route exact path="/trips" component={TripPage} />
-
-
+            <Route exact path="/trips/new" component={NewTripPage}/>
+    
           </Switch>
         </div>
       </Router>
