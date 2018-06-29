@@ -22,8 +22,7 @@ class App extends Component {
           </div>
           <div className="App">
 
-
-          </div>
+   </div>
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/trips" component={TripPage} />
@@ -33,7 +32,9 @@ class App extends Component {
             <Route exact path="/trips/:tripId/travelers" component={TravelersPage} />
 
           </Switch>
-        </div>
+
+          </div>
+     
       </Router>
     );
   }

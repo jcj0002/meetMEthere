@@ -25,7 +25,7 @@ class NewTripPage extends Component {
             this.props.history.push(`/trips/${res.data._id}`)
         })
     }
-    
+
 
 
     render() {
@@ -84,7 +84,8 @@ class NewTripPage extends Component {
                         value={this.state.returnDate}
                         onChange={this.handleChange} />
 
-
+  <br />
+          <button type="submit">Submit</button>
 
 
 
