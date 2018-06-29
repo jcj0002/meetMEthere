@@ -55,6 +55,7 @@ class TripPage extends Component {
                 })}
 
                 <Link to="/trips/new"><button>START PLANNING</button></Link>  
+              
             </div>
         );
     }

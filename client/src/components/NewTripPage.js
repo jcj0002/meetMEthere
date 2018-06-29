@@ -86,6 +86,7 @@ class NewTripPage extends Component {
 
   <br />
           <button type="submit">Submit</button>
+          
 
 
 

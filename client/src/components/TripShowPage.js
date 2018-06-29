@@ -19,6 +19,16 @@ class TripShowPage extends Component {
                 console.error(err)
             })
     }
+    deleteTrip = () => {
+        const tripId = this.state.trips._id
+    
+        axios.delete(`/api/trips/${tripId}`)
+          .then(res => {
+            this.props.history.push('/trips')
+          })
+      }
+
+
 
 
     render() {
@@ -27,6 +37,10 @@ class TripShowPage extends Component {
             <div>
                 <h2>Your Trip</h2>
                 <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
+
+                <br/>
+                <button onClick={this.deleteTrip}>Delete User</button>
+
             </div>
         );
     }
