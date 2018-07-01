@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import UpdateTripPage from './UpdateTripPage'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import UpdateTripPage from './UpdateTripPage'
+
+
+
+
+const TripImage = styled.div`
+.TripImage{
+    width: 50vw
+
+}
+`
+
 
 
 
 class TripShowPage extends Component {
+    
     state = {
         trips: [],
         editTrip: false
@@ -40,6 +52,7 @@ class TripShowPage extends Component {
 
         return (
             <div>
+                <TripImage>
                 <h2>{this.state.trips.name}</h2>
                 <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
                 <div>{this.state.trips.description}</div>
@@ -56,6 +69,7 @@ class TripShowPage extends Component {
                     </button>
                     )
                 }
+                </TripImage>
 
 
 

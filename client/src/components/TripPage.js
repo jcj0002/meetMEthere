@@ -49,13 +49,14 @@ class TripPage extends Component {
                                 <img className='TripImage' src={trips.image} alt={trips.name} />
                                 <div>{trips.description}</div>
                             </div>
-                            <Link to={`/trips/${trips._id}`}><button>VIEW</button></Link>  
+                            <Link to={`/trips/${trips._id}`}><button>VIEW</button></Link>
                         </TripImage>
                     )
                 })}
+                <br />
+                <Link to="/trips/new"><button>START PLANNING</button></Link>
+                <br />
 
-                <Link to="/trips/new"><button>START PLANNING</button></Link>  
-              
             </div>
         );
     }

@@ -11,15 +11,23 @@ import NewTripPage from './components/NewTripPage'
 import UpdateTripPage from './components/UpdateTripPage'
 
 class App extends Component {
+  state = {
+    trips:[]
+  }
 
 
   render() {
+    const TripShowPageInfo = (props)=>(
+      <TripShowPage trips={this.state.trips}{...props}/>
+    )
     return (
+
 
       <Router>
         <div>
           <div>
             <Link to="/trips">Home</Link>
+            
           </div>
           <div className="App">
 
@@ -29,7 +37,7 @@ class App extends Component {
             <Route exact path="/trips" component={TripPage} />
             <Route exact path="/trips/new" component={NewTripPage} />
             
-            <Route exact path="/trips/:tripId" component={TripShowPage} />
+            <Route exact path="/trips/:tripId" render={TripShowPageInfo} />
             <Route exact path="/trips/:tripId/" component={UpdateTripPage} />
             <Route exact path="/trips/:tripId/plans" component={PlansPage} />
             <Route exact path="/trips/:tripId/travelers" component={TravelersPage} />
