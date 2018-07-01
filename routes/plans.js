@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
 })
 // Add Plans
 
-router.post('/', function (req, res) {
+router.post('/new', function (req, res) {
 
     
     TripModel.findById(req.params.tripId)

@@ -3,6 +3,7 @@ import axios from 'axios'
 import UpdateTripPage from './UpdateTripPage'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import PlansPage from './PlansPage';
 
 
 
@@ -70,12 +71,19 @@ class TripShowPage extends Component {
                     )
                 }
                 </TripImage>
+                
+                <br/>
+                <div>
+
+                <PlansPage match ={this.props.match}/>
+                </div>
 
 
 
                 {this.state.editTrip
                     ? <div>
                         <UpdateTripPage match={this.props.match} history={this.props.history}/>
+                        
                        
                     </div>
                     : null}

@@ -3,17 +3,40 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+const TripContainer = styled.div`
+background-color: 	#bae1ff
+border: solid turquoise 10px;
 
+
+`
+const Title = styled.div`
+text-align: center;
+`
 
 const TripImage = styled.div`
 .TripImage{
-    width: 50vw
+    display: flex
+    justify-content: center;
+    width: 50vw;
+   
+    
 
 }
 .Container {
-    border: solid black 5px;
-    width: 50vw
-    height: 45vw
+    border: solid white 2px;
+    box-shadow:5px 10px 18px #888888
+    background: white;
+   display: flex
+   flex-direction: row
+   flex-wrap:wrap
+   justify-content:center;
+   align-items: baseline;
+   width: 50vw
+   padding: 70px;
+   margin-left: 20%;
+
+
+   
 }
 `
 
@@ -35,8 +58,10 @@ class TripPage extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Trip</h1>
+            <TripContainer>
+                <Title>
+                <h1>meetMEthere!</h1>
+                </Title>
                 <form>
                     Name: <input type='text' />
                 </form>
@@ -57,7 +82,7 @@ class TripPage extends Component {
                 <Link to="/trips/new"><button>START PLANNING</button></Link>
                 <br />
 
-            </div>
+            </TripContainer>
         );
     }
 }

@@ -2,12 +2,22 @@ import React, { Component } from 'react';
 import axios from 'axios'
 class PlansPage extends Component {
     state = {
-        activity: '',
-        price: '',
-        date: '',
-        description: '',
-        duration: '',
-        image: ''
+        trip:{},
+        plans:[]
+    }
+
+    componentDidMount () {
+        const tripId = this.props.match.params.tripId
+
+    axios.get(`/api/trips/${tripId}`).then((res) => {
+      this.setState({
+        trip: res.data.trip,
+        plans: res.data.trip.plans
+      })
+    })
+  
+
+
     }
 
     handleChange = (event) => {
@@ -18,11 +28,24 @@ class PlansPage extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/plans', this.state).then((res) => {
+        const tripId = this.props.match.params.tripId
+        // axios.post(`/api/trips/${tripId}/plans/new`, this.state)
+        // .then((res) => {
+        
+        //     this.props.history.push(`/trips/${tripId}`)
+        
+        axios.post(`/api/trips/${tripId}/plans/new`).then((res) => {
+            this.setState({
+            trip: res.data.trip,
+            
+              plans: res.data.trip.plans.new
+              
+            })
             console.log(res.data)
-            this.props.history.push(`/trips/:tripId/plans/${res.data._id}`)
-        })
-    }
+          })
+        }
+
+        
     render() {
         return (
             <div>
@@ -32,38 +55,38 @@ class PlansPage extends Component {
                         placeholder="Activity Name"
                         type="text"
                         name="activity"
-                        value={this.state.activity}
+                        value={this.state.trip.activity}
                         onChange={this.handleChange}
                     />
                     <br />
-                    <input
+                     <input
                         placeholder="Price"
                         type="text"
                         name="price"
-                        value={this.state.price}
+                        value={this.state.trip.price}
                         onChange={this.handleChange} />
                     <br />
-                    <input
+                    {/* <input
                         placeholder="Description"
                         type="text"
                         name="description"
-                        value={this.state.description}
+                        value={this.state.trip.description}
                         onChange={this.handleChange} />
-                    <br />
+                    <br /> */}
                     <input
                         placeholder="Duration"
                         type="text"
                         name="duration"
-                        value={this.state.hotel}
+                        value={this.state.trip.duration}
                         onChange={this.handleChange} />
                     <br />
-                    <input
+                    {/* <input
                         placeholder="Activity Image"
                         type="text"
                         name="image"
-                        value={this.state.image}
+                        value={this.state.trip.image}
                         onChange={this.handleChange} />
-                    <br />
+                    <br />  */}
                 
                     <button type="submit">SAVE</button>
                     </form> 
