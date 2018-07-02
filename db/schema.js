@@ -76,14 +76,7 @@ const TripSchema = new Schema({
 
     travelers: [TravelersSchema],
     plans: [PlansSchema]
-
-
-
-
 })
-
-
-
 
 const TripModel = mongoose.model('Trip', TripSchema)
 const TravelersModel = mongoose.model('travelers', TravelersSchema)

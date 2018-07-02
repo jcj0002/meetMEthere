@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
-
+import styled from 'styled-components'
 import TripPage from './components/TripPage'
 import LandingPage from './components/LandingPage'
 import PlansPage from './components/PlansPage'
@@ -10,6 +10,29 @@ import TripShowPage from './components/TripShowPage'
 import NewTripPage from './components/NewTripPage'
 import UpdateTripPage from './components/UpdateTripPage'
 
+const Navbar= styled.div`
+background:  #336699;
+display: flex;
+justify-content:center;
+align-items: center;
+
+
+color: white;
+height:100px;
+border-bottom: 50px tan;
+
+a{
+  color:white;
+  font-size:30px;
+  text-decoration: blink;
+  /* margin-left: 47%; */
+  /* margin-top: 30px; */
+  text-transform: uppercase;
+  display:flex;
+  align-content: center;
+  padding:20px;
+}
+`
 
 
 class App extends Component {
@@ -27,10 +50,12 @@ class App extends Component {
 
         <Router>
           <div >
-            <div>
+            <Navbar>
               <Link to="/trips">Home</Link>
+              
+              <Link to="/">Login</Link>
 
-            </div>
+            </Navbar>
             <div className="App">
 
             </div>

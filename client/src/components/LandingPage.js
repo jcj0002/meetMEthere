@@ -1,4 +1,28 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
+
+const LandinPage= styled.div`
+
+display:flex;
+justify-content: space-around;
+margin-top: -1px;
+background-color: #bae1ff;
+border: solid 10px turquoise;
+
+padding: 30%;
+
+form{
+    display:flex;
+    width:30%;
+    text-align:center;
+    justify-content: space-around;
+   
+}
+h1{
+    
+}
+
+`
 
 class LandingPage extends Component {
     state = {
@@ -17,7 +41,7 @@ class LandingPage extends Component {
 
 render() {
     return (
-        <div>
+        <LandinPage>
             <h1>meetMEthere!</h1>
             <form onSubmit={this.handleSubmit}>
                 <input
@@ -40,7 +64,7 @@ render() {
                 
             </form>
             
-        </div>
+            </LandinPage>
     );
 }
 }

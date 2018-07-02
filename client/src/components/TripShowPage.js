@@ -6,28 +6,56 @@ import { Link } from 'react-router-dom'
 import PlansPage from './PlansPage';
 
 
-
-
 const TripImage = styled.div`
 .TripImage{
-    width: 50vw
+    width: 50vw;
+    border: solid white 2px;
+    box-shadow:5px 10px 18px #888888;
+    background: white;
+   display: flex;
+   flex-direction: row;
+   flex-wrap:wrap;
+   justify-content:center;
+   align-items: baseline;
+   width: 50vw;
+   padding: 70px;
+   margin-left: 20%;
+   margin-bottom:20%;
+   border-radius: 8px;
+
+   
+    
+    center{
+        color: white;
+    }
+
 
 }
 `
+const TripDetails = styled.div`
+background:	#bae1ff;
+border:solid turquoise 10px;
+color: white;
 
+.DescriptionFont{
+    color: black;
 
+    
+}
+button: margin-top: 50px;
 
+`
 
 class TripShowPage extends Component {
-    
+
     state = {
-        trips: [],
+        trips: {},
         editTrip: false
     }
     componentDidMount() {
         const tripId = this.props.match.params.tripId
         axios.get(`/api/trips/${tripId}`).then((res) => {
-            console.log(res)
+            console.log("TRIP API", res.data)
             this.setState({ trips: res.data.trip })
         })
             .catch((err) => {
@@ -48,46 +76,45 @@ class TripShowPage extends Component {
     }
 
 
-
     render() {
-
         return (
-            <div>
+            <TripDetails>
                 <TripImage>
-                <h2>{this.state.trips.name}</h2>
-                <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
-                <div>{this.state.trips.description}</div>
+                    <center>
+                    <h2>{this.state.trips.name}</h2>
+                    </center>
+                    <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
+                    <div className= 'DescriptionFont'>{this.state.trips.description}</div>
+
+                    <br />
+                    <button onClick={this.deleteTrip}>DELETE TRIP</button>
+
+                    {this.state.editTrip
+                        ? null
+                        : (
+                            <button onClick={this.toggleEditTripForm}>
+                                EDIT TRIP
+                    </button>
+                        )
+                    }
+                </TripImage>
 
                 <br />
-                <button onClick={this.deleteTrip}>DELETE TRIP</button>
-
-
-                {this.state.editTrip
-                    ? null
-                    : (
-                        <button onClick={this.toggleEditTripForm}>
-                            EDIT TRIP
-                    </button>
-                    )
-                }
-                </TripImage>
-                
-                <br/>
                 <div>
 
-                <PlansPage match ={this.props.match}/>
+                    <PlansPage plans={this.state.trips.plans} {...this.props} />
                 </div>
 
 
 
                 {this.state.editTrip
                     ? <div>
-                        <UpdateTripPage match={this.props.match} history={this.props.history}/>
-                        
-                       
+                        <UpdateTripPage match={this.props.match} history={this.props.history} />
+
+
                     </div>
                     : null}
-            </div>
+            </TripDetails>
         );
     }
 }

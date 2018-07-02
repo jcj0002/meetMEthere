@@ -30,9 +30,9 @@ router.post('/new', function (req, res) {
     
     TripModel.findById(req.params.tripId)
         .then((trip) => {
+            console.log("Posting new plan with request: ", req.body)
             const newPlan = new PlansModel(req.body)
             trip.plans.push(newPlan)
-            console.log("new Plan", req.body)
             return trip.save()
         })
         .then((trip) => {

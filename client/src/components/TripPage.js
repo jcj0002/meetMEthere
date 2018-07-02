@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 
 const Title = styled.div`
 text-align: center;
-/* font-family: 'Bonbon', cursive; */
 text-shadow:2px;
 color: #6D929B;
 text-shadow: 2px 1px black;
@@ -41,10 +40,6 @@ const TripImage = styled.div`
    padding: 70px;
    margin-left: 20%;
    border-radius: 8px;
-   
-
-
-   
 }
 `
 const TripContainer = styled.div`
@@ -60,7 +55,7 @@ h2{
 h3{
     font-size: 30px;
     color:tan;
- 
+    margin-top:-20px;
 }
 
 button{
@@ -78,16 +73,7 @@ button{
     margin-bottom:30px;
    
 }
-
 `
-
-
-
-
-
-
-
-
 
 class TripPage extends Component {
     state = {
@@ -104,33 +90,34 @@ class TripPage extends Component {
     }
 
     render() {
+        const mappedArray = this.state.trips.map((trips) => {
+            return (
+                <TripImage key={trips._id}>
+                    <h2>{trips.name}</h2>
+                    <br/>
+                    <div className='Container'>
+                    <h3>{trips.location}</h3>
+                        <img className='TripImage' src={trips.image} alt={trips.name} />
+                        <br/>
+                        <br/>
+                        <div>{trips.description}</div>
+                        <br/>
+                        
+                    </div>
+                    <br/>
+                    <Link to={`/trips/${trips._id}`}><button>VIEW</button></Link>
+                    <br />
+                </TripImage>
+            )
+        })
+
         return (
             <TripContainer>
                 <Title>
                     <h1>meetMEthere!</h1>
-
                 </Title>
 
-                {this.state.trips.map((trips) => {
-                    return (
-                        <TripImage key={trips._id}>
-                            <h2>{trips.name}</h2>
-                            
-                            <div className='Container'>
-                            <h3>{trips.location}</h3>
-                                <img className='TripImage' src={trips.image} alt={trips.name} />
-                                
-                                <div>{trips.description}</div>
-                                <br/>
-                                
-                            </div>
-                            <br/>
-                            <Link to={`/trips/${trips._id}`}><button>VIEW</button></Link>
-                            <br />
-                           
-                        </TripImage>
-                    )
-                })}
+                {mappedArray}
 
                 <br />
                

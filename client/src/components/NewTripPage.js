@@ -20,10 +20,11 @@ class NewTripPage extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/trips', this.state).then((res) => {
-            console.log(res.data)
-            this.props.history.push(`/trips/${res.data._id}`)
-        })
+        axios.post('/api/trips', this.state)
+            .then((res) => {
+                console.log(res.data)
+                this.props.history.push(`/trips/${res.data._id}`)
+            })
     }
 
 
@@ -76,7 +77,7 @@ class NewTripPage extends Component {
                         name="departureDate"
                         value={this.state.departureDate}
                         onChange={this.handleChange} />
-                        <br/>
+                    <br />
                     <input
                         placeholder="Return Date"
                         type="date"
@@ -84,9 +85,9 @@ class NewTripPage extends Component {
                         value={this.state.returnDate}
                         onChange={this.handleChange} />
 
-  <br />
-          <button type="submit">Submit</button>
-          
+                    <br />
+                    <button type="submit">Submit</button>
+
 
 
 
