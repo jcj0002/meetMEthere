@@ -15,8 +15,6 @@ background:  #336699;
 display: flex;
 justify-content:center;
 align-items: center;
-
-
 color: white;
 height:100px;
 border-bottom: 50px tan;
@@ -25,14 +23,14 @@ a{
   color:white;
   font-size:30px;
   text-decoration: blink;
-  /* margin-left: 47%; */
-  /* margin-top: 30px; */
   text-transform: uppercase;
   display:flex;
   align-content: center;
   padding:20px;
 }
 `
+
+
 
 
 class App extends Component {
@@ -56,9 +54,9 @@ class App extends Component {
               <Link to="/">Login</Link>
 
             </Navbar>
-            <div className="App">
+            
 
-            </div>
+            
             <Switch>
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/trips" component={TripPage} />
@@ -70,7 +68,7 @@ class App extends Component {
               <Route exact path="/trips/:tripId/travelers" component={TravelersPage} />
 
             </Switch>
-
+            
           </div>
 
         </Router>
