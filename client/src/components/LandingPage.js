@@ -54,8 +54,10 @@ input{
   width:200px;
   height: 20px;
   margin-left: 43%;
-  margin-bottom: 40px;
-  padding-top: 20px;
+  margin-bottom: 30px;
+  padding: 5px;
+  vertical-align: middle;
+
     
 }
 
@@ -77,6 +79,7 @@ a{
   display:flex;
   align-content: center;
   padding:20px;
+ 
 }
 `
 

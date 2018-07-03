@@ -47,6 +47,7 @@ background-color: 	#bae1ff;
 border: solid turquoise 10px;
 text-align: center;
 
+
 h2{
     color: white;
     -webkit-text-stroke: .5px black;
@@ -68,10 +69,24 @@ button{
 }
 
 .CreateButton{
-    text-align:right;
     margin-right: 82%;
     margin-bottom:30px;
    
+}
+@media (max-width: 500px) {
+    button{
+        text-align:center;
+    }
+    h1{
+        font-size:20px;
+    }
+    
+    .TripContainer{
+        width: 112vw;
+    }
+    
+    
+    
 }
 `
 
@@ -112,7 +127,7 @@ class TripPage extends Component {
         })
 
         return (
-            <TripContainer>
+            <TripContainer className="TripContainer">
                 <Title>
                     <h1>meetMEthere!</h1>
                 </Title>

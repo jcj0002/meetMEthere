@@ -6,27 +6,33 @@ import { Link } from 'react-router-dom'
 import PlansPage from './PlansPage';
 
 
-const TripImage = styled.div`
-.TripImage{
-    width: 50vw;
-    border: solid white 2px;
+const TripContainer = styled.div`
+
+.Container{
+   border: solid white 2px;
     box-shadow:5px 10px 18px #888888;
     background: white;
-   display: flex;
-   flex-direction: row;
-   flex-wrap:wrap;
-   justify-content:center;
-   align-items: baseline;
-   width: 50vw;
-   padding: 70px;
-   margin-left: 20%;
-   margin-bottom:20%;
-   border-radius: 8px;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items: baseline;
+    width: 30vw;
+    height:60vh;
+    margin: 100px 0 20% 480px ;
+    padding: 70px;
+    border-radius: 8px;
+}
+.TripImage{
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    size:30px;
+}
    
     
-    center{
-        color: white;
+center{
+    color: white;
     }
 
 
@@ -42,8 +48,25 @@ color: white;
 
     
 }
-button: margin-top: 50px;
 
+button{
+    background-color: turquoise;
+   color: white;
+   font-size: 25px;
+   padding: 10px;
+   border-radius:8px;
+   
+
+ 
+}
+
+`
+const AdjustmentButton = styled.div`
+width: 500px;
+display:flex;
+justify-content: space-around;
+margin-top: -270px;
+margin-left: 560px;
 `
 
 class TripShowPage extends Component {
@@ -79,14 +102,19 @@ class TripShowPage extends Component {
     render() {
         return (
             <TripDetails>
-                <TripImage>
+                <TripContainer>
                     <center>
-                    <h2>{this.state.trips.name}</h2>
+                        <h2>{this.state.trips.name}</h2>
                     </center>
-                    <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
-                    <div className= 'DescriptionFont'>{this.state.trips.description}</div>
 
-                    <br />
+                    <div className="Container">
+                        <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
+                        <div className='DescriptionFont'>{this.state.trips.description}</div>
+
+                        <br />
+                    </div>
+                </TripContainer>
+                <AdjustmentButton>
                     <button onClick={this.deleteTrip}>DELETE TRIP</button>
 
                     {this.state.editTrip
@@ -96,11 +124,12 @@ class TripShowPage extends Component {
                                 EDIT TRIP
                     </button>
                         )
-                    }
-                </TripImage>
+                    }</AdjustmentButton>
+
+
 
                 <br />
-                <div>
+                <div className="PlansContainer">
 
                     <PlansPage plans={this.state.trips.plans} {...this.props} />
                 </div>
