@@ -22,6 +22,9 @@ const TripContainer = styled.div`
     margin: 100px 0 20% 480px ;
     padding: 70px;
     border-radius: 8px;
+    color: tan;
+
+   
 }
 .TripImage{
     display: flex;
@@ -37,6 +40,11 @@ center{
 
 
 }
+h3{
+    font-size: 30px;
+    color:tan;
+    margin-top:-20px;
+}
 `
 const TripDetails = styled.div`
 background:	#bae1ff;
@@ -44,7 +52,7 @@ border:solid turquoise 10px;
 color: white;
 
 .DescriptionFont{
-    color: black;
+    color:tan;
 
     
 }
@@ -108,6 +116,7 @@ class TripShowPage extends Component {
                     </center>
 
                     <div className="Container">
+                        <h3>{this.state.trips.location}</h3>
                         <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
                         <div className='DescriptionFont'>{this.state.trips.description}</div>
 

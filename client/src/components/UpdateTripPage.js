@@ -72,7 +72,7 @@ class UpdateTripPage extends Component {
             <div>
                 <FormContainer>
 
-                    <h1>UPDATE TRIP</h1>
+                    <h1>EDIT TRIP</h1>
 
 
 

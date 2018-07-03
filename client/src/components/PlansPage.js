@@ -11,6 +11,7 @@ button{
    font-size: 25px;
    padding-bottom: 10px;
    border-radius:8px;
+  
 }
 
 form{
@@ -23,7 +24,7 @@ form{
    justify-content:space-around;
    align-items: baseline;
    width: 30vw;
-   height:30vh;
+   height:50vh;
    margin: 100px 0 20% 480px ;
    padding: 70px;
    border-radius: 8px;
@@ -60,8 +61,15 @@ const TripPlans = styled.div`
    width: 30vw;
    height:60vh;
    padding: 70px;
-    color:black;
+    color:tan;
    border-radius: 8px;
+}
+
+.TripImage{
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    size:30px;
 }
 
     `
@@ -126,11 +134,14 @@ class PlansPage extends Component {
                         
                         <h2>{plan.activity}</h2>
                         <br />
-                        <img src={plan.image} alt={plan.name} />
+                        <img className='TripImage' src={plan.image} alt={plan.name} />
                         <br />
                         <h3>{plan.price}</h3>
+                        <br/>
                         <h3>{plan.Date}</h3>
+                        <br/>
                         <h3>{plan.description}</h3>
+                        <br/>
                         <h3>{plan.duration}</h3>
                     </TripPlans>
                 </PlansContainer>

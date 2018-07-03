@@ -1,5 +1,43 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
 import axios from 'axios'
+
+const NewContainer=styled.div`
+    background:	#bae1ff;
+    border:solid turquoise 10px;
+    color: white;
+
+form{
+    border: solid #336699 2px;
+    box-shadow:5px 10px 18px #888888;
+    background: white;
+   display: flex;
+   flex-direction: column;
+   flex-wrap:wrap;
+   justify-content:space-around;
+   align-items: baseline;
+   width: 30vw;
+   height:30vh;
+   margin: 100px 0 20% 480px ;
+   padding: 70px;
+   border-radius: 8px;
+
+
+}
+
+button{
+    background-color: turquoise;
+   color: white;
+   font-size: 25px;
+   padding-bottom: 10px;
+   border-radius: 8px;
+}
+
+h1{
+    text-align:center;
+}
+
+`
 
 class NewTripPage extends Component {
     state = {
@@ -31,7 +69,7 @@ class NewTripPage extends Component {
 
     render() {
         return (
-            <div>
+            <NewContainer>
                 <h1>Create A Trip</h1>
 
                 <form onSubmit={this.handleSubmit}>
@@ -94,7 +132,7 @@ class NewTripPage extends Component {
                 </form>
 
 
-            </div>
+            </NewContainer>
         );
     }
 }

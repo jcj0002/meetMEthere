@@ -18,6 +18,7 @@ text-decoration:underline;
 `
 
 const TripImage = styled.div`
+color: tan;
 .TripImage{
     display: flex;
     justify-content: center;
