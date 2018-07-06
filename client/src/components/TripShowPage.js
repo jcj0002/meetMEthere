@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import PlansPage from './PlansPage';
 
 
+
 const TripContainer = styled.div`
 
 .Container{
@@ -119,6 +120,7 @@ class TripShowPage extends Component {
                         <h3>{this.state.trips.location}</h3>
                         <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
                         <div className='DescriptionFont'>{this.state.trips.description}</div>
+                       
 
                         <br />
                     </div>

@@ -16,14 +16,14 @@
 * Mongoose
 
 ## WIREFRAMES
-![alt text][Imgur](https://i.imgur.com/05iO1EY.jpg)
+![alt text](https://i.imgur.com/05iO1EY.jpg)
 
 ## DATA MODELS
-![alt text] [Imgur](https://i.imgur.com/wvFzGfG.png)
+![alt text](https://i.imgur.com/wvFzGfG.png)
 ## TRELLO
 
 * https://trello.com/b/8AQC69Sk/meetmethere-wdi16-project-3
 
 ## SITE
 
-* https://dashboard.heroku.com/apps/project-3-meetmethere
+* https://project-3-meetmethere.herokuapp.com/
