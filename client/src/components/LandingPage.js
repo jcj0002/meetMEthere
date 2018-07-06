@@ -122,7 +122,7 @@ render() {
                 />
             
                 <LoginButton>
-                <button> <a href ="http://localhost:3000/trips">Login</a></button>
+                <button> <a href ="/trips">Login</a></button>
                 </LoginButton>
             </form>
             
