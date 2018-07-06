@@ -17,7 +17,7 @@ const vacay = new PlansModel({
 
 const vacay1 = new PlansModel({
     activity: 'Boat Ride',
-    price: '45.00',
+    price: '55.00',
     Date: now,
     description: 'Catch a wave or two on your fav boatride!',
     duration: '60 minutes',
