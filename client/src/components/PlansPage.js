@@ -37,9 +37,10 @@ h1{
    border: solid #336699 2px;
    width:30vw;
    height:5vh;
-   text-align: center;
    display:flex;
    justify-content: center;
+   align-items: center;
+   flex-wrap:wrap;
    background:#336699;
    color:white;
    border-radius: 8px;
