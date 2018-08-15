@@ -59,6 +59,7 @@ max-width: 100%;
 
 .DescriptionFont{
     color:tan;
+    font-size:25px;
 
     
 }
@@ -149,6 +150,7 @@ class TripShowPage extends Component {
                     <div className="Container">
                         <h3>{this.state.trips.location}</h3>
                         <img className='TripImage' src={this.state.trips.image} alt={this.state.trips.name} />
+                        <br/>
                         <div className='DescriptionFont'>{this.state.trips.description}</div>
                        
 

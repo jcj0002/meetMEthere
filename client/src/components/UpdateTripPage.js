@@ -5,7 +5,7 @@ import axios from 'axios'
 const FormContainer = styled.div`
 
 form{
-    border: solid #336699 2px;
+    border: solid  2px;
     box-shadow: 5px 10px 18px #888888;
     background: white;
     display: flex;
@@ -13,10 +13,10 @@ form{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: baseline;
-    width: 30vw;
-    height: 30vh;
-    margin: 100px 0 20% 480px;
-    padding: 70px;
+    width: 50vw;
+    height: 40vh;
+    margin-left:20%;
+    padding: 5%;
     border-radius: 8px;
 }
 
@@ -132,6 +132,7 @@ class UpdateTripPage extends Component {
                         <button type="submit">UPDATE</button>
                     </form>
                 </FormContainer>
+                <br/>
             </div>
         );
     }
