@@ -38,7 +38,7 @@ color: tan;
    justify-content:center;
    align-items: baseline;
    width: 50vw;
-   padding: 70px;
+   padding: 5%;
    margin-left: 20%;
    border-radius: 8px;
 }
@@ -52,7 +52,7 @@ text-align: center;
 h2{
     color: white;
     -webkit-text-stroke: .5px black;
-    font-size: 30px;
+    font-size: 40px;
 }
 h3{
     font-size: 30px;
@@ -66,13 +66,13 @@ button{
    font-size: 25px;
    padding: 10px;
    border-radius:8px;
-    
+
 }
 
 .CreateButton{
-    margin-right: 82%;
+    
     margin-bottom:30px;
-   
+  
 }
 @media (max-width: 500px) {
     button{
@@ -84,7 +84,11 @@ button{
     
     .TripContainer{
         width: 112vw;
+
+    
     }
+
+    
     
     
     

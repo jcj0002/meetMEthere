@@ -6,6 +6,7 @@ const NewContainer=styled.div`
     background:	#bae1ff;
     border:solid turquoise 10px;
     color: white;
+    height: 100vh;
 
 form{
     border: solid #336699 2px;
@@ -16,10 +17,10 @@ form{
    flex-wrap:wrap;
    justify-content:space-around;
    align-items: baseline;
-   width: 30vw;
-   height:30vh;
-   margin: 100px 0 20% 480px ;
-   padding: 70px;
+   width: 50vw;
+   height:40vh;
+   margin-left: 20%;
+   padding: 5%;
    border-radius: 8px;
 
 
@@ -70,6 +71,7 @@ class NewTripPage extends Component {
     render() {
         return (
             <NewContainer>
+                <br/>
                 <h1>Create A Trip</h1>
 
                 <form onSubmit={this.handleSubmit}>

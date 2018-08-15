@@ -9,6 +9,8 @@ import PlansPage from './PlansPage';
 
 const TripContainer = styled.div`
 
+
+
 .Container{
    border: solid white 2px;
     box-shadow:5px 10px 18px #888888;
@@ -18,10 +20,10 @@ const TripContainer = styled.div`
     flex-wrap:wrap;
     justify-content:center;
     align-items: baseline;
-    width: 30vw;
-    height:60vh;
-    margin: 100px 0 20% 480px ;
-    padding: 70px;
+    width: 50vw;
+    /* height:60vh; */
+    margin-left:20%;
+    padding: 5%;
     border-radius: 8px;
     color: tan;
 
@@ -30,17 +32,19 @@ const TripContainer = styled.div`
 .TripImage{
     display: flex;
     justify-content: center;
-    width: 30vw;
+    width: 50vw;
     size:30px;
 }
    
     
 center{
     color: white;
+    font-size: 30px;
+    -webkit-text-stroke: .5px black;
+
     }
 
 
-}
 h3{
     font-size: 30px;
     color:tan;
@@ -51,6 +55,7 @@ const TripDetails = styled.div`
 background:	#bae1ff;
 border:solid turquoise 10px;
 color: white;
+max-width: 100%;
 
 .DescriptionFont{
     color:tan;
@@ -59,6 +64,7 @@ color: white;
 }
 
 button{
+    
     background-color: turquoise;
    color: white;
    font-size: 25px;
@@ -71,11 +77,33 @@ button{
 
 `
 const AdjustmentButton = styled.div`
-width: 500px;
+
 display:flex;
 justify-content: space-around;
-margin-top: -270px;
-margin-left: 560px;
+align-content: center;
+margin-top: 60px;
+padding-right: 100px;
+padding-left:100px;
+
+@media (max-width: 500px) {
+    button{
+        text-align:center;
+    }
+    h1{
+        font-size:20px;
+    }
+    
+    .Container{
+        width: 112vw;
+
+    
+    }
+
+    
+    
+    
+    
+}
 `
 
 class TripShowPage extends Component {
@@ -112,9 +140,11 @@ class TripShowPage extends Component {
         return (
             <TripDetails>
                 <TripContainer>
+                    <br/>
                     <center>
                         <h2>{this.state.trips.name}</h2>
                     </center>
+                    <br/>
 
                     <div className="Container">
                         <h3>{this.state.trips.location}</h3>
@@ -134,11 +164,13 @@ class TripShowPage extends Component {
                             <button onClick={this.toggleEditTripForm}>
                                 EDIT TRIP
                     </button>
-                        )
-                    }</AdjustmentButton>
+                        )}
+                        
+                </AdjustmentButton>
 
 
 
+                <br />
                 <br />
                 <div className="PlansContainer">
 

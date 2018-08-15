@@ -3,11 +3,13 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const PlansContainer = styled.div`
-background:	#bae1ff;
+
 
 button{
-    background-color: turquoise;
+  background-color: turquoise;
    color: white;
+   display: flex;
+   justify-content: space-around;
    font-size: 25px;
    padding-bottom: 10px;
    border-radius:8px;
@@ -15,7 +17,7 @@ button{
 }
 
 form{
-    border: solid #336699 2px;
+    border: solid 2px;
     box-shadow:5px 10px 18px #888888;
     background: white;
    display: flex;
@@ -23,29 +25,39 @@ form{
    flex-wrap:wrap;
    justify-content:space-around;
    align-items: baseline;
-   width: 30vw;
-   height:50vh;
-   margin: 100px 0 20% 480px ;
-   padding: 70px;
+   width: 50vw;
+   height:40vh;
+   margin-left: 20%;
+   padding: 5%;
    border-radius: 8px;
 
 }
 h1{
-   margin-left:600px;
+   
    border: solid #336699 2px;
-   width:25%;
+   width:30vw;
+   height:5vh;
    text-align: center;
    display:flex;
    justify-content: center;
-   background:white;
-   color:tan;
+   background:#336699;
+   color:white;
    border-radius: 8px;
+   margin-left:36%;
+   padding:10px;
    
 }
 h2{
     text-align: center;
     font-size:35px;
+    /* margin-top: 150px; */
+
 }
+.Plans{
+    -webkit-text-stroke: .5px black;
+    font-size: 40px;
+}
+
 `
 
 const TripPlans = styled.div`
@@ -56,11 +68,11 @@ const TripPlans = styled.div`
    flex-direction: row;
    flex-wrap:wrap;
    justify-content:center;
-   margin: 100px 0 20% 480px ;
    align-items: baseline;
-   width: 30vw;
-   height:60vh;
-   padding: 70px;
+   width: 50vw;
+   margin-left: 20%;
+   /* height:60vh; */
+   padding: 5%;
     color:tan;
    border-radius: 8px;
 }
@@ -68,7 +80,7 @@ const TripPlans = styled.div`
 .TripImage{
     display: flex;
     justify-content: center;
-    width: 30vw;
+    width: 50vw;
     size:30px;
 }
 
@@ -109,6 +121,7 @@ class PlansPage extends Component {
         const data = {
             image: this.state.image,
             activity: this.state.activity,
+            description: this.state.description,
             price: this.state.price,
             duration: this.state.duration
         }
@@ -127,24 +140,30 @@ class PlansPage extends Component {
         const mappedArray = this.state.plans.map((plan) => {
             return (
                 <PlansContainer>
-                    <br/>
-                        <h2>Plans</h2>
-                        <br/>
+                    <h2 className="Plans">Plans</h2>
+                    <br />
+                    <br />
                     <TripPlans key={plan._id}>
-                        
                         <h2>{plan.activity}</h2>
                         <br />
                         <img className='TripImage' src={plan.image} alt={plan.name} />
                         <br />
-                        <h3>{plan.price}</h3>
-                        <br/>
-                        <h3>{plan.Date}</h3>
-                        <br/>
-                        <h3>{plan.description}</h3>
-                        <br/>
-                        <h3>{plan.duration}</h3>
-                    </TripPlans>
-                </PlansContainer>
+                        <ul>
+                            <li>
+                                <h3>PRICE: {plan.price}</h3>
+                            </li>
+                            <br />
+                            <h3>{plan.Date}</h3>
+                            <li>
+                                <h3>DESCRIPTION: {plan.description}</h3>
+                            </li>
+                            <br />
+                            <li>
+                                <h3>DURATION: {plan.duration}</h3>
+                            </li>
+                        </ul>
+                    </TripPlans >
+                </PlansContainer >
 
             )
         })
@@ -155,10 +174,9 @@ class PlansPage extends Component {
             <PlansContainer>
                 <div>
                     {mappedArray}
-
-
-
+                    <br />
                     <h1>CREATE PLANS</h1>
+                    <br />
                     <form onSubmit={this.handleSubmit}>
                         <input
                             placeholder="Activity Name"
@@ -198,10 +216,11 @@ class PlansPage extends Component {
                         <br />
 
                         <button type="submit">SAVE</button>
-                    </form>
 
+                    </form>
+                    <br />
                 </div>
-            </PlansContainer>
+            </PlansContainer >
 
         );
 
